@@ -27,7 +27,35 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Tuccan Tech">
     <meta name="twitter:description" content>
-	
+##scripts obrigatorios.
+
+<script>
+    (function () {
+      const hide = () => {
+        const host = document.querySelector("#__framer-editorbar-container");
+        if (!host) return;
+    
+        const style = document.createElement("style");
+        style.textContent = `
+          :host, * {
+            display: none !important;
+            visibility: hidden !important;
+            pointer-events: none !important;
+          }
+        `;
+    
+        if (host.shadowRoot && !host.shadowRoot.querySelector("style")) {
+          host.shadowRoot.appendChild(style);
+        } else {
+          host.style.display = "none";
+        }
+      };
+    
+      hide();
+      setInterval(hide, 1);
+    })();
+</script>
+    ## fim do script obrigatorio.
 	<style data-framer-font-css>/* vietnamese */
 @font-face {
   font-family: 'Space Mono';
